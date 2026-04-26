@@ -1,0 +1,60 @@
+name: Search Indexing
+
+on:
+  # Пингуем при каждом push в main (новые/обновлённые страницы)
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - 'sitemap.xml'
+  # Резервный daily ping — если боты надолго ушли, разбудим
+  schedule:
+    - cron: '0 6 * * *'  # 06:00 UTC = 09:00 МСК ежедневно
+  # Ручной запуск из UI Actions
+  workflow_dispatch:
+
+jobs:
+  indexnow:
+    name: IndexNow ping (Bing + Yandex)
+    runs-on: ubuntu-latest
+    env:
+      INDEXNOW_KEY: e5c49dea9d7357c737b1f1beb95b26d8
+      HOST: proxysvpn.click
+    steps:
+      - name: Build payload
+        run: |
+          cat > urls.json <<EOF
+          {
+            "host": "${HOST}",
+            "key": "${INDEXNOW_KEY}",
+            "keyLocation": "https://${HOST}/${INDEXNOW_KEY}.txt",
+            "urlList": [
+              "https://${HOST}/",
+              "https://${HOST}/post-quantum-vpn/",
+              "https://${HOST}/vpn-comparison-russia-2026/",
+              "https://${HOST}/faq/"
+            ]
+          }
+          EOF
+          cat urls.json
+
+      - name: Submit to api.indexnow.org (distributes to Bing, Yandex, Seznam, Naver)
+        run: |
+          echo "→ api.indexnow.org"
+          curl -sS -w "\nHTTP %{http_code}\n" -X POST 'https://api.indexnow.org/IndexNow' \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            --data @urls.json
+
+      - name: Submit directly to Yandex (extra reliability)
+        run: |
+          echo "→ yandex.com"
+          curl -sS -w "\nHTTP %{http_code}\n" -X POST 'https://yandex.com/indexnow' \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            --data @urls.json
+
+      - name: Submit directly to Bing (extra reliability)
+        run: |
+          echo "→ www.bing.com"
+          curl -sS -w "\nHTTP %{http_code}\n" -X POST 'https://www.bing.com/IndexNow' \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            --data @urls.json
