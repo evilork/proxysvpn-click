@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post-Quantum VPN: How ML-KEM 768 Changes the Threat Model — 2026 Explainer</title>
+<meta name="description" content="An in-depth technical explanation of post-quantum VPN cryptography. Why ML-KEM 768, hybrid construction, and why VPN users should care about FIPS 203 today.">
+<meta name="keywords" content="post-quantum VPN, ML-KEM 768, FIPS 203, quantum-resistant VPN, harvest now decrypt later, hybrid encryption">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://proxysvpn.click/post-quantum-vpn/">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Post-Quantum VPN: How ML-KEM 768 Changes the Threat Model">
+<meta property="og:description" content="In-depth explainer on post-quantum VPN cryptography. Why ML-KEM 768 and hybrid construction matter today.">
+<meta property="og:url" content="https://proxysvpn.click/post-quantum-vpn/">
+<meta property="og:image" content="https://proxysvpn.click/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Post-Quantum VPN: How ML-KEM 768 Changes the Threat Model">
+<meta name="twitter:image" content="https://proxysvpn.click/og-image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Post-Quantum VPN: How ML-KEM 768 Changes the Threat Model",
+      "description": "An in-depth technical explanation of post-quantum VPN cryptography, FIPS 203, and hybrid encryption.",
+      "image": "https://proxysvpn.click/og-image.png",
+      "datePublished": "2026-04-26T00:00:00Z",
+      "dateModified": "2026-04-26T00:00:00Z",
+      "author": {
+        "@type": "Organization",
+        "name": "ProxysVPN.click Editorial",
+        "url": "https://proxysvpn.click/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ProxysVPN.click",
+        "logo": { "@type": "ImageObject", "url": "https://proxysvpn.click/og-image.png" }
+      },
+      "mainEntityOfPage": "https://proxysvpn.click/post-quantum-vpn/",
+      "proficiencyLevel": "Expert"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://proxysvpn.click/" },
+        { "@type": "ListItem", "position": 2, "name": "Post-Quantum VPN", "item": "https://proxysvpn.click/post-quantum-vpn/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="progress-bar" id="progress"></div>
+
+<div class="container">
+
+    <div class="meta-bar">
+        <div class="left">A Technical Review &nbsp;/&nbsp; Issue 01 &nbsp;/&nbsp; April 2026</div>
+        <div class="right"><a href="/">Home</a> &nbsp;·&nbsp; <a href="/faq/">FAQ</a> &nbsp;·&nbsp; <a href="https://proxysvpn.com/" rel="noopener">proxysvpn.com</a></div>
+    </div>
+
+    <div class="breadcrumbs">
+        <a href="/">Home</a> <span class="sep">/</span> <span>Post-Quantum VPN</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-label reveal">Filed under: Cryptography, Quantum computing</div>
+        <h1 class="hero-title reveal">How <em>post-quantum</em> changes the VPN threat model.</h1>
+        <p class="hero-subtitle reveal">A technical explainer for engineers and security-conscious users. Why ML-KEM 768 was chosen, how hybrid construction works, and what it means for traffic captured today and decrypted tomorrow.</p>
+
+        <div class="hero-meta reveal">
+            <div class="item">
+                <span class="label">Standard</span>
+                <span class="value">FIPS 203</span>
+            </div>
+            <div class="item">
+                <span class="label">Published</span>
+                <span class="value">August 2024</span>
+            </div>
+            <div class="item">
+                <span class="label">Type</span>
+                <span class="value">Lattice-based KEM</span>
+            </div>
+            <div class="item">
+                <span class="label">Reading time</span>
+                <span class="value">11 minutes</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="article-body reveal">
+
+            <h2>The shift from "if" to "when"</h2>
+            <p>For most of the public-key era, the conversation about quantum computers breaking encryption has been theoretical. Shor's algorithm has been known since 1994. The hardware to run it at scale has not. That gap is what cryptographers call the <strong>quantum gap</strong>, and it has been closing.</p>
+            <p>NIST's response, started in 2016 and finalized in August 2024, was to standardize three post-quantum algorithms. <strong>FIPS 203</strong> defined ML-KEM (Module-Lattice Key Encapsulation Mechanism), based on the CRYSTALS-Kyber proposal. FIPS 204 covered ML-DSA for signatures. FIPS 205 covered SLH-DSA as a hash-based fallback.</p>
+            <p>For VPNs, the relevant standard is FIPS 203. Key encapsulation is what happens during the handshake when client and server agree on the symmetric key that protects the rest of the session. If that step uses classical math, a future quantum computer can recover the key from recorded traffic.</p>
+
+            <h2>Harvest Now, Decrypt Later</h2>
+            <p>The threat model has a name: <strong>HNDL</strong>. State-level adversaries with the resources to run TSPU-class deep packet inspection also have the storage to record interesting traffic indefinitely. They do not need to break it now. They need to wait.</p>
+            <p>Estimates for cryptographically relevant quantum computers (CRQC) range from optimistic 2030 to conservative 2040. The U.S. National Security Agency has explicitly told its supply chain to migrate to post-quantum by 2035. The window for HNDL is not hypothetical: it is the gap between today's traffic capture and tomorrow's CRQC.</p>
+            <blockquote>If your communications would be sensitive ten years from now, you need post-quantum protection ten years ago. The next best time is today.</blockquote>
+
+            <h2>Why lattice-based</h2>
+            <p>ML-KEM rests on the hardness of a lattice problem called Module Learning With Errors (MLWE). Lattice problems have a few useful properties:</p>
+            <ul>
+                <li><strong>No known quantum speedup.</strong> Shor's algorithm efficiently solves discrete logarithm and integer factorization. It does not solve MLWE. Grover's algorithm gives a quadratic speedup on brute force, which is why parameter sets are doubled (768 instead of 384, etc.).</li>
+                <li><strong>Mature analysis.</strong> Lattice cryptography has been studied since the 1990s. The hardness assumptions have survived three decades of academic attack.</li>
+                <li><strong>Reasonable performance.</strong> ML-KEM 768 produces roughly 1184-byte public keys and 1088-byte ciphertexts. Acceptable for handshakes; not free, but not prohibitive.</li>
+            </ul>
+            <p>Other candidates (code-based, isogeny-based) either lost confidence during evaluation or had performance issues. SIKE, an isogeny scheme, was famously broken in 2022 with a classical attack.</p>
+
+            <h2>Why hybrid construction matters</h2>
+            <p>A pure ML-KEM handshake would mean trusting that lattice cryptography holds. While the analysis is solid, post-quantum algorithms are younger than RSA or elliptic curves. A previously unknown attack on lattice problems would be catastrophic if there were no fallback.</p>
+            <p>The pragmatic answer is <strong>hybrid construction</strong>: combine ML-KEM with a classical algorithm such that the session key depends on both. If lattice cryptography holds, the session is post-quantum secure. If lattice cryptography is broken, the classical layer still protects against today's attackers.</p>
+            <p>The encryption suite ProxysVPN uses, <code>mlkem768x25519plus.native.0rtt</code>, encodes exactly this:</p>
+            <ul>
+                <li><strong>mlkem768</strong>: ML-KEM at 768 parameter set, FIPS 203</li>
+                <li><strong>x25519</strong>: Curve25519 ECDH, the classical baseline</li>
+                <li><strong>plus</strong>: hybrid combination, both must succeed</li>
+                <li><strong>native</strong>: implemented at the protocol level, not bolted on</li>
+                <li><strong>0rtt</strong>: zero round-trip resumption enabled</li>
+            </ul>
+
+            <h2>0-RTT and why it matters operationally</h2>
+            <p>Post-quantum keys are larger than classical ones. ML-KEM 768 ciphertext is 1088 bytes versus 32 bytes for X25519. On the first connection, this is unavoidable overhead. On subsequent connections, 0-RTT resumption uses the previously established session ticket to skip the full handshake.</p>
+            <p>For a mobile VPN client that re-establishes connections frequently (network changes, sleep cycles, application restarts), 0-RTT is the difference between a perceptible 200ms reconnect and an instant one. Without it, post-quantum overhead becomes a UX problem.</p>
+
+            <h2>What this looks like on the wire</h2>
+            <p>VLESS Reality plus ML-KEM produces a handshake that looks, to passive observers and most active probes, like a standard TLS 1.3 connection to <code>www.intel.com</code>. The Reality part handles the masquerade. The ML-KEM part runs inside the encrypted channel.</p>
+            <p>An adversary capturing this traffic in 2026 sees:</p>
+            <ul>
+                <li>TCP connection to port 443 of a normal-looking IP</li>
+                <li>TLS ClientHello with SNI <code>www.intel.com</code></li>
+                <li>Apparently valid certificate exchange</li>
+                <li>Encrypted application data</li>
+            </ul>
+            <p>If they store this and bring a CRQC online in 2035, they can break the X25519 layer, reveal that it was VLESS rather than HTTPS, and... still cannot recover the application data, because the session key also depended on ML-KEM 768. That is the hybrid guarantee.</p>
+
+            <h2>Limitations and honest caveats</h2>
+            <p>Post-quantum is not magic. Some honest limitations:</p>
+            <ul>
+                <li><strong>It does not protect endpoints.</strong> If your device is compromised, the strongest cryptography in the world does not help.</li>
+                <li><strong>Implementation matters.</strong> ML-KEM has subtle decapsulation paths. A flawed implementation can leak the secret. The reference implementations have been audited; in-house variants might not be.</li>
+                <li><strong>Authentication is separate.</strong> ML-KEM is a KEM, not a signature scheme. Authentication still relies on classical primitives unless ML-DSA (FIPS 204) is also deployed. Most VPN ecosystems have not yet migrated authentication.</li>
+                <li><strong>Larger handshake.</strong> The 1KB+ overhead matters on lossy networks. 0-RTT mitigates it for resumed connections.</li>
+            </ul>
+
+            <h2>Why this is not yet standard</h2>
+            <p>NIST published FIPS 203 in August 2024. As of April 2026, the major VPN ecosystems are at different stages:</p>
+            <ul>
+                <li>WireGuard's reference implementation does not yet support post-quantum. Several forks experiment with it.</li>
+                <li>OpenVPN has draft RFCs but no shipped post-quantum mode.</li>
+                <li>The Xray ecosystem (which includes VLESS Reality) added native ML-KEM support in late 2025. ProxysVPN is the first commercial deployment we have verified that uses it in production for end users.</li>
+            </ul>
+            <p>The lag is not technical. The algorithms work. The lag is operational: integrating post-quantum into existing client stacks, handling key sizes, ensuring backward compatibility, and convincing operations teams to deploy something whose threat is not yet imminent.</p>
+            <p>That last reason is also why most providers will continue to delay. Provider risk and user risk are not the same. A provider has no near-term incentive to upgrade. A user with traffic that matters in 2035 does.</p>
+
+            <h2>What to do</h2>
+            <p>If you operate under any of the following threat models, post-quantum encryption is not premature:</p>
+            <ul>
+                <li>You are a journalist, researcher, or activist whose source material could be weaponized retroactively.</li>
+                <li>You operate in a jurisdiction with state-level traffic capture (Russia and China being the operational examples in 2026).</li>
+                <li>You handle commercial information whose value persists beyond the quantum gap (intellectual property, M&amp;A, government supply chain).</li>
+            </ul>
+            <p>For ordinary streaming and casual use, classical cryptography is still adequate. The HNDL threat assumes adversaries with strategic patience and storage. Most users do not face that.</p>
+
+            <p>For a side-by-side review of which providers have deployed post-quantum encryption in the Russian market, see the <a href="/vpn-comparison-russia-2026/">2026 VPN comparison</a>. For a list of related questions, see the <a href="/faq/">FAQ</a>.</p>
+
+        </div>
+
+        <div class="related reveal">
+            <div class="related-title">Related publications</div>
+            <ul class="related-list">
+                <li>
+                    <a href="/">
+                        <span class="rel-title">The first post-quantum VPN built for Russia (review)</span>
+                        <span class="rel-arrow">→</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/vpn-comparison-russia-2026/">
+                        <span class="rel-title">VPN comparison Russia 2026: full methodology</span>
+                        <span class="rel-arrow">→</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://csrc.nist.gov/pubs/fips/203/final" rel="noopener">
+                        <span class="rel-title">FIPS 203 (NIST official publication)</span>
+                        <span class="rel-arrow">↗ csrc.nist.gov</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="section-num reveal">§ &nbsp;—&nbsp; Try it</div>
+        <h2 class="cta-headline reveal">Future-proof your VPN traffic.</h2>
+        <a href="https://proxysvpn.com/" class="cta-button reveal" rel="noopener">
+            <span>Visit ProxysVPN.com</span>
+            <span class="arrow">→</span>
+        </a>
+        <div class="cta-secondary reveal">3 days for ₽10 &nbsp;·&nbsp; ML-KEM 768 hybrid encryption included</div>
+    </section>
+
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div>© 2026 ProxysVPN.click — An independent technical review</div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/post-quantum-vpn/">Post-quantum</a>
+                <a href="/vpn-comparison-russia-2026/">Comparison</a>
+                <a href="/faq/">FAQ</a>
+                <a href="https://proxysvpn.com/" rel="noopener">proxysvpn.com</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => entry.target.classList.add('in'), i * 80);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const progress = document.getElementById('progress');
+    window.addEventListener('scroll', () => {
+        const h = document.documentElement;
+        const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight);
+        progress.style.width = (scrolled * 100) + '%';
+    }, { passive: true });
+</script>
+
+</body>
+</html>
