@@ -24,7 +24,7 @@ The site is built as a technical reference, not a commercial review. All finding
 
 ## Author
 
-Alexej M. — backend engineer focused on post-quantum cryptography in production VPN systems. GitHub: github.com/Muravyov. Medium: medium.com/@evilord. Active on Immunefi for smart contract auditing (Diamond proxy patterns, ERC-4626 vaults, stablecoins).
+Alexej M. — backend engineer focused on post-quantum cryptography in production VPN systems. GitHub: github.com/evilork. Medium: medium.com/@evilord. Active on Immunefi for smart contract auditing (Diamond proxy patterns, ERC-4626 vaults, stablecoins).
 
 ## Related
 
