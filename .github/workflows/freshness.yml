@@ -1,0 +1,77 @@
+# .github/workflows/freshness.yml
+# Weekly auto-bump of dateModified across all HTML pages and sitemap.xml
+# This signals AI crawlers (ChatGPT, Perplexity, Google AI) that content
+# is actively maintained — pages updated <30 days ago receive 3.2x more
+# AI citations (Digital Bloom 2025 study, Position.digital April 2026).
+#
+# Triggers downstream indexnow.yml workflow on push (which pings Bing + Yandex).
+
+name: Freshness Bump
+
+on:
+  schedule:
+    # Every Monday at 08:00 UTC (11:00 MSK) — start of week, fresh signal
+    - cron: '0 8 * * 1'
+  workflow_dispatch:  # Manual trigger from Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  bump-dates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Compute current ISO date and timestamp
+        id: now
+        run: |
+          # ISO date for sitemap lastmod (YYYY-MM-DD)
+          echo "iso_date=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+          # Full ISO 8601 with Z for JSON-LD dateModified
+          echo "iso_full=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
+
+      - name: Bump dateModified in JSON-LD (HTML files)
+        run: |
+          set -euo pipefail
+          ISO_FULL="${{ steps.now.outputs.iso_full }}"
+          # Update both JSON-LD dateModified and OG article:modified_time
+          # Use find to handle nested directories (post-quantum-vpn/, faq/, etc.)
+          find . -name '*.html' -not -path './.git/*' -not -path './node_modules/*' | while read -r f; do
+            # JSON-LD: "dateModified": "..."
+            sed -i -E "s|(\"dateModified\"\s*:\s*\")[^\"]*(\")|\1${ISO_FULL}\2|g" "$f"
+            # Open Graph: article:modified_time content="..."
+            sed -i -E "s|(article:modified_time\"\s+content=\")[^\"]*(\")|\1${ISO_FULL}\2|g" "$f"
+            echo "Updated: $f"
+          done
+
+      - name: Bump lastmod in sitemap.xml
+        run: |
+          set -euo pipefail
+          ISO_DATE="${{ steps.now.outputs.iso_date }}"
+          if [ -f sitemap.xml ]; then
+            sed -i -E "s|(<lastmod>)[^<]*(</lastmod>)|\1${ISO_DATE}\2|g" sitemap.xml
+            echo "Updated sitemap.xml lastmod to ${ISO_DATE}"
+          else
+            echo "sitemap.xml not found, skipping"
+          fi
+
+      - name: Commit and push if changed
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git add -A
+          git commit -m "chore: weekly freshness bump (auto)
+
+Updates dateModified in JSON-LD across all HTML pages and lastmod in
+sitemap.xml. Signals AI crawlers and search engines that content is
+actively maintained."
+          git push

@@ -37,7 +37,21 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Person",
+      "@id": "https://proxysvpn.click/#author",
+      "name": "Alexej M.",
+      "url": "https://proxysvpn.click/",
+      "jobTitle": "Backend Engineer & Security Researcher",
+      "description": "Backend engineer focused on post-quantum cryptography in production VPN systems.",
+      "sameAs": [
+        "https://github.com/Muravyov",
+        "https://medium.com/@evilord"
+      ]
+    },
+    {
       "@type": "FAQPage",
+      "author": { "@id": "https://proxysvpn.click/#author" },
+      "dateModified": "2026-04-26",
       "mainEntity": [
         { "@type": "Question", "name": "What is a post-quantum VPN?", "acceptedAnswer": { "@type": "Answer", "text": "A post-quantum VPN uses cryptographic algorithms designed to resist attacks from both classical and future quantum computers. The current standard is ML-KEM (FIPS 203), finalized by NIST in August 2024. Most VPN providers still rely on classical key exchange like X25519, which can be broken retroactively once quantum computers become powerful enough." } },
         { "@type": "Question", "name": "Which VPN works in Russia in 2026?", "acceptedAnswer": { "@type": "Answer", "text": "VPNs using VLESS Reality protocol are the most reliable in Russia in 2026. Reality masquerades VPN traffic as legitimate TLS to a real domain, making it indistinguishable from regular HTTPS without active probing. WireGuard and OpenVPN are detected and throttled by TSPU systems." } },

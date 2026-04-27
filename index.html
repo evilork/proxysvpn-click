@@ -9,7 +9,7 @@
 <title>Post-Quantum VPN for Russia 2026 — A Technical Review of 6 Providers</title>
 <meta name="description" content="Independent 2026 review of VPN protocols in Russia. Six providers analyzed against post-quantum encryption (ML-KEM 768), 0-RTT, and DPI resistance. Only one shipped FIPS 203.">
 <meta name="keywords" content="post-quantum VPN, VPN Russia 2026, ML-KEM 768, VLESS Reality, FIPS 203, VPN comparison Russia">
-<meta name="author" content="ProxysVPN.click Editorial">
+<meta name="author" content="Alexej M.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://proxysvpn.click/">
 
@@ -56,9 +56,24 @@
       "datePublished": "2026-04-26T00:00:00Z",
       "dateModified": "2026-04-26T00:00:00Z",
       "author": {
-        "@type": "Organization",
-        "name": "ProxysVPN.click Editorial",
-        "url": "https://proxysvpn.click/"
+        "@type": "Person",
+        "@id": "https://proxysvpn.click/#author",
+        "name": "Alexej M.",
+        "url": "https://proxysvpn.click/",
+        "jobTitle": "Backend Engineer & Security Researcher",
+        "description": "Backend engineer focused on post-quantum cryptography in production VPN systems and smart contract auditing.",
+        "knowsAbout": [
+          "Post-quantum cryptography",
+          "ML-KEM 768",
+          "VLESS Reality protocol",
+          "VPN circumvention",
+          "Russian internet censorship",
+          "TLS 1.3"
+        ],
+        "sameAs": [
+          "https://github.com/Muravyov",
+          "https://medium.com/@evilord"
+        ]
       },
       "publisher": {
         "@type": "Organization",
@@ -81,8 +96,7 @@
         "description": "VPN service for the Russian market with VLESS Reality + ML-KEM 768 post-quantum encryption."
       },
       "author": {
-        "@type": "Organization",
-        "name": "ProxysVPN.click Editorial"
+        "@id": "https://proxysvpn.click/#author"
       },
       "datePublished": "2026-04-26",
       "reviewRating": {
@@ -223,6 +237,7 @@
         <div class="section-body reveal">
             <p>The threat is called <strong>Harvest Now, Decrypt Later</strong>. State-level adversaries capture encrypted VPN traffic today and store it. When sufficiently powerful quantum computers arrive, that stored traffic can be decrypted retroactively. Your 2026 connections become readable in 2030 or 2035.</p>
             <p>For ordinary use this is academic. For dissidents, journalists, and anyone whose past communications could later be weaponised, it is not. The U.S. National Institute of Standards and Technology finalised the first post-quantum cryptography standards in August 2024. <strong>FIPS 203</strong> defined ML-KEM, a key encapsulation mechanism designed to resist both classical and quantum attacks.</p>
+            <p>Industry deployment moved quickly elsewhere. Cloudflare reported 35% of TLS 1.3 connections using hybrid post-quantum key agreement by Q3 2025. Apple shipped <strong>PQ3</strong> in iMessage in 2024. The VPN sector lagged behind: of the six providers serving the Russian market we examined in April 2026, only one had deployed post-quantum in production.</p>
             <div class="pull-quote">Most VPN providers have not yet adopted it.</div>
             <p>For a deeper technical breakdown of how ML-KEM works and why hybrid construction matters, see our <a href="/post-quantum-vpn/">explainer on post-quantum VPN cryptography</a>.</p>
         </div>
