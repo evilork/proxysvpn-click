@@ -29,21 +29,7 @@
     var browserLang = (navigator.language || 'en').slice(0, 2).toLowerCase();
     var lang = SUPPORTED.indexOf(urlLang) >= 0 ? urlLang
              : (SUPPORTED.indexOf(storedLang) >= 0 ? storedLang
-             : (SUPPORTED.indexOf(browserLang) >= 0 ? browserLang : 'en'));
-
-    
-    // Update OG image based on lang (for SSR-less GitHub Pages, browsers see this on JS-rendered share)
-    function updateOgImage(lang) {
-        const ogImg = document.querySelector('meta[property="og:image"]');
-        const twImg = document.querySelector('meta[name="twitter:image"]');
-        const url = lang === 'ru'
-            ? 'https://proxysvpn.click/og-image-ru.png'
-            : 'https://proxysvpn.click/og-image-en.png';
-        if (ogImg) ogImg.setAttribute('content', url);
-        if (twImg) twImg.setAttribute('content', url);
-    }
-
-function setLang(l) {
+             : (SUPPORTED.indexOf(browserLang) >= 0 ? browserLang : 'en'));function setLang(l) {
         if (SUPPORTED.indexOf(l) < 0) return;
         lang = l;
         try { localStorage.setItem(LANG_KEY, l); } catch (e) {}
