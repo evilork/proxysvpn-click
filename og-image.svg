@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+    <defs>
+        <linearGradient id="bgGrad" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#14171c"/>
+            <stop offset="1" stop-color="#0f1216"/>
+        </linearGradient>
+        <linearGradient id="shieldGrad" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#4f46e5"/>
+            <stop offset="1" stop-color="#818cf8"/>
+        </linearGradient>
+        <radialGradient id="glow" cx="980" cy="180" r="280" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#818cf8" stop-opacity="0.18"/>
+            <stop offset="1" stop-color="#818cf8" stop-opacity="0"/>
+        </radialGradient>
+    </defs>
+
+    <!-- Background -->
+    <rect width="1200" height="630" fill="url(#bgGrad)"/>
+    <rect width="1200" height="630" fill="url(#glow)"/>
+
+    <!-- Lattice dot pattern (ML-KEM reference) -->
+    <g fill="#818cf8" opacity="0.12">
+        <!-- 7 cols x 5 rows of dots, spaced 60px -->
+        <circle cx="900" cy="100" r="2"/><circle cx="960" cy="100" r="2"/><circle cx="1020" cy="100" r="2"/><circle cx="1080" cy="100" r="2"/><circle cx="1140" cy="100" r="2"/>
+        <circle cx="900" cy="160" r="2"/><circle cx="960" cy="160" r="2"/><circle cx="1020" cy="160" r="2"/><circle cx="1080" cy="160" r="2"/><circle cx="1140" cy="160" r="2"/>
+        <circle cx="900" cy="220" r="2"/><circle cx="960" cy="220" r="2"/><circle cx="1020" cy="220" r="2"/><circle cx="1080" cy="220" r="2"/><circle cx="1140" cy="220" r="2"/>
+        <circle cx="900" cy="280" r="2"/><circle cx="960" cy="280" r="2"/><circle cx="1020" cy="280" r="2"/><circle cx="1080" cy="280" r="2"/><circle cx="1140" cy="280" r="2"/>
+        <circle cx="900" cy="340" r="2"/><circle cx="960" cy="340" r="2"/><circle cx="1020" cy="340" r="2"/><circle cx="1080" cy="340" r="2"/><circle cx="1140" cy="340" r="2"/>
+    </g>
+
+    <!-- Top metadata strip -->
+    <text x="80" y="80" fill="#818cf8" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" letter-spacing="0">Technical Review · Issue 01 · April 2026</text>
+
+    <!-- Logo shield (small, top-right corner) -->
+    <g transform="translate(1060, 50)">
+        <path d="M40 4 L72 14 L72 40 C72 56 58 70 40 76 C22 70 8 56 8 40 L8 14 Z" fill="url(#shieldGrad)"/>
+        <g fill="#fff" opacity="0.95">
+            <circle cx="26" cy="26" r="2"/><circle cx="40" cy="26" r="2"/><circle cx="54" cy="26" r="2"/>
+            <circle cx="26" cy="40" r="2"/><circle cx="40" cy="40" r="2.6"/><circle cx="54" cy="40" r="2"/>
+            <circle cx="26" cy="54" r="2"/><circle cx="40" cy="54" r="2"/><circle cx="54" cy="54" r="2"/>
+        </g>
+    </g>
+
+    <!-- Headline -->
+    <text x="80" y="270" fill="#ebe9e4" font-family="Bricolage Grotesque, ui-sans-serif" font-size="92" font-weight="500" letter-spacing="-2.4">The first</text>
+    <text x="80" y="370" fill="#818cf8" font-family="Bricolage Grotesque, ui-sans-serif" font-size="92" font-weight="500" font-style="italic" letter-spacing="-2.4">post-quantum</text>
+    <text x="80" y="470" fill="#ebe9e4" font-family="Bricolage Grotesque, ui-sans-serif" font-size="92" font-weight="500" letter-spacing="-2.4">VPN for Russia.</text>
+
+    <!-- Subline / tagline -->
+    <text x="80" y="540" fill="#9ca0a8" font-family="Onest, ui-sans-serif" font-size="22" font-weight="400" letter-spacing="-0.3">Independent technical review of 6 providers · ML-KEM 768 · VLESS Reality</text>
+
+    <!-- Bottom rule -->
+    <line x1="80" y1="580" x2="1120" y2="580" stroke="#ebe9e4" stroke-opacity="0.12" stroke-width="1"/>
+
+    <!-- Footer line -->
+    <text x="80" y="610" fill="#6b6d72" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13">proxysvpn.click</text>
+    <text x="1120" y="610" text-anchor="end" fill="#6b6d72" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13">FIPS 203 · NIST · Aug 2024</text>
+</svg>

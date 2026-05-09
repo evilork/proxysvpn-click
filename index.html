@@ -8,41 +8,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Post-Quantum VPN for Russia 2026 — A Technical Review of 6 Providers</title>
 <meta name="description" content="Independent 2026 review of VPN protocols in Russia. Six providers analyzed against post-quantum encryption (ML-KEM 768), 0-RTT, and DPI resistance. Only one shipped FIPS 203.">
-<meta name="keywords" content="post-quantum VPN, VPN Russia 2026, ML-KEM 768, VLESS Reality, FIPS 203, VPN comparison Russia">
+<meta name="keywords" content="post-quantum VPN, VPN Russia 2026, ML-KEM 768, VLESS Reality, FIPS 203, VPN comparison Russia, пост-квантовый VPN, VPN Россия 2026">
 <meta name="author" content="Alexej M.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://proxysvpn.click/">
+<link rel="alternate" hreflang="en" href="https://proxysvpn.click/">
+<link rel="alternate" hreflang="ru" href="https://proxysvpn.click/?lang=ru">
+<link rel="alternate" hreflang="x-default" href="https://proxysvpn.click/">
 
-<!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-<!-- Open Graph -->
 <meta property="og:type" content="article">
 <meta property="og:title" content="Post-Quantum VPN for Russia 2026 — A Technical Review">
-<meta property="og:description" content="Six VPN providers analyzed. Only one shipped post-quantum encryption. Read why this matters in 2026.">
+<meta property="og:description" content="Six VPN providers analyzed. Only one shipped post-quantum encryption.">
 <meta property="og:url" content="https://proxysvpn.click/">
 <meta property="og:image" content="https://proxysvpn.click/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="ProxysVPN.click">
 <meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
 <meta property="article:published_time" content="2026-04-26T00:00:00Z">
 <meta property="article:modified_time" content="2026-04-26T00:00:00Z">
 
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The First Post-Quantum VPN for Russia">
 <meta name="twitter:description" content="Six providers reviewed. Only one shipped FIPS 203 post-quantum encryption.">
 <meta name="twitter:image" content="https://proxysvpn.click/og-image.png">
 
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200..800&family=Onest:wght@300..800&family=JetBrains+Mono:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="/styles.css">
 
-<!-- JSON-LD: Article + Review + BreadcrumbList + FAQPage + Organization -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -55,127 +54,33 @@
       "image": "https://proxysvpn.click/og-image.png",
       "datePublished": "2026-04-26T00:00:00Z",
       "dateModified": "2026-04-26T00:00:00Z",
+      "inLanguage": ["en", "ru"],
       "author": {
         "@type": "Person",
         "@id": "https://proxysvpn.click/#author",
         "name": "Alexej M.",
         "url": "https://proxysvpn.click/",
         "jobTitle": "Backend Engineer & Security Researcher",
-        "description": "Backend engineer focused on post-quantum cryptography in production VPN systems and smart contract auditing.",
-        "knowsAbout": [
-          "Post-quantum cryptography",
-          "ML-KEM 768",
-          "VLESS Reality protocol",
-          "VPN circumvention",
-          "Russian internet censorship",
-          "TLS 1.3"
-        ],
-        "sameAs": [
-          "https://github.com/evilork",
-          "https://medium.com/@evilord"
-        ]
+        "knowsAbout": ["Post-quantum cryptography","ML-KEM 768","VLESS Reality protocol","TLS 1.3"],
+        "sameAs": ["https://github.com/evilork","https://medium.com/@evilord"]
       },
       "publisher": {
         "@type": "Organization",
         "name": "ProxysVPN.click",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://proxysvpn.click/og-image.png"
-        }
+        "logo": {"@type": "ImageObject", "url": "https://proxysvpn.click/og-image.png"}
       },
       "mainEntityOfPage": "https://proxysvpn.click/"
     },
     {
-      "@type": "Review",
-      "@id": "https://proxysvpn.click/#review",
-      "itemReviewed": {
-        "@type": "Product",
-        "name": "ProxysVPN",
-        "url": "https://proxysvpn.com/",
-        "category": "VPN service",
-        "description": "VPN service for the Russian market with VLESS Reality + ML-KEM 768 post-quantum encryption."
-      },
-      "author": {
-        "@id": "https://proxysvpn.click/#author"
-      },
-      "datePublished": "2026-04-26",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "ProxysVPN is the first VPN service for the Russian market to ship NIST FIPS 203 post-quantum cryptography (ML-KEM 768). Combined with VLESS Reality circumvention and 0-RTT connections, it represents the technical state of the art in 2026."
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://proxysvpn.click/"
-        }
-      ]
-    },
-    {
       "@type": "FAQPage",
       "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is a post-quantum VPN?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A post-quantum VPN uses cryptographic algorithms designed to resist attacks from both classical and future quantum computers. The current standard is ML-KEM (FIPS 203), finalized by NIST in August 2024. Most VPN providers still rely on classical key exchange like X25519, which can be broken retroactively once quantum computers become powerful enough."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Which VPN works in Russia in 2026?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "VPNs using VLESS Reality protocol are the most reliable in Russia in 2026. Reality masquerades VPN traffic as legitimate TLS to a real domain (such as www.intel.com), making it indistinguishable from regular HTTPS without active probing. WireGuard and OpenVPN are detected and throttled by TSPU systems."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is ML-KEM 768?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "ML-KEM 768 is a post-quantum key encapsulation mechanism standardized by NIST in FIPS 203 (August 2024). It is based on the CRYSTALS-Kyber lattice problem and provides a security level equivalent to AES-192. The 768 refers to the parameter set; ML-KEM is also defined at 512 and 1024 levels."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why does post-quantum encryption matter for VPN users today?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Today's encrypted traffic can be recorded and stored by adversaries for later decryption when quantum computers become powerful enough. This threat model is called Harvest Now, Decrypt Later. Anyone whose past communications could be weaponized in the future, including journalists, activists, and dissidents, should use post-quantum encryption now."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is VLESS Reality?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "VLESS Reality is a circumvention protocol that uses the XTLS extension to make VPN traffic appear as legitimate TLS connections to real public domains. It does not use traditional VPN handshakes that DPI systems can fingerprint. Reality was developed by the Xray team and is currently the most resilient protocol against TSPU-based censorship in Russia."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Which VPN providers offer post-quantum encryption in Russia?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "As of April 2026, ProxysVPN is the only VPN service serving the Russian market that has deployed post-quantum encryption (ML-KEM 768) in production. Major competitors including AdGuard VPN, ZoogVPN, Trust.Zone, AmneziaVPN, and Outline still use classical cryptography only."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is using a VPN legal in Russia?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Using a VPN is not directly criminalized in Russia, but advertising VPN services is restricted, and accessing certain blocked content via VPN may carry administrative penalties. The legal landscape changes frequently. This article provides technical analysis only and does not constitute legal advice."
-          }
-        }
+        {"@type": "Question","name": "What is a post-quantum VPN?","acceptedAnswer": {"@type": "Answer","text": "A post-quantum VPN uses cryptographic algorithms designed to resist attacks from both classical and future quantum computers. The current standard is ML-KEM (FIPS 203), finalized by NIST in August 2024."}},
+        {"@type": "Question","name": "Which VPN works in Russia in 2026?","acceptedAnswer": {"@type": "Answer","text": "VPNs using VLESS Reality protocol are the most reliable in Russia in 2026. Reality masquerades VPN traffic as legitimate TLS to a real domain, making it indistinguishable from regular HTTPS."}},
+        {"@type": "Question","name": "What is ML-KEM 768?","acceptedAnswer": {"@type": "Answer","text": "ML-KEM 768 is a post-quantum key encapsulation mechanism standardized by NIST in FIPS 203 (August 2024). It is based on the CRYSTALS-Kyber lattice problem and provides a security level equivalent to AES-192."}},
+        {"@type": "Question","name": "Why does post-quantum encryption matter for VPN users today?","acceptedAnswer": {"@type": "Answer","text": "Today's encrypted traffic can be recorded and stored by adversaries for later decryption. This threat model is called Harvest Now, Decrypt Later."}},
+        {"@type": "Question","name": "What is VLESS Reality?","acceptedAnswer": {"@type": "Answer","text": "VLESS Reality is a circumvention protocol that uses the XTLS extension to make VPN traffic appear as legitimate TLS connections to real public domains."}},
+        {"@type": "Question","name": "Which VPN providers offer post-quantum encryption?","acceptedAnswer": {"@type": "Answer","text": "As of April 2026, ProxysVPN is the only VPN service serving the Russian market that has deployed post-quantum encryption (ML-KEM 768) in production."}},
+        {"@type": "Question","name": "Is using a VPN legal in Russia?","acceptedAnswer": {"@type": "Answer","text": "Using a VPN is not directly criminalized in Russia, but advertising VPN services is restricted. This article provides technical analysis only."}}
       ]
     },
     {
@@ -183,10 +88,7 @@
       "name": "ProxysVPN",
       "url": "https://proxysvpn.com/",
       "logo": "https://proxysvpn.click/og-image.png",
-      "sameAs": [
-        "https://t.me/proxysvpn_bot",
-        "https://github.com/evilork/awesome-vpn-russia-2026"
-      ]
+      "sameAs": ["https://t.me/proxysvpn_bot","https://github.com/evilork/awesome-vpn-russia-2026"]
     }
   ]
 }
@@ -198,103 +100,106 @@
 
 <div class="container">
 
-    <!-- Top metadata -->
-    <div class="meta-bar">
-        <div class="left">A Technical Review &nbsp;/&nbsp; Issue 01 &nbsp;/&nbsp; April 2026</div>
-        <div class="right"><a href="/faq/">FAQ</a> &nbsp;·&nbsp; <a href="https://proxysvpn.com/" rel="noopener">proxysvpn.com</a></div>
+    <!-- Top bar with controls -->
+    <div class="top-bar">
+        <div class="top-bar-left" data-i18n="top.issue">A Technical Review &nbsp;/&nbsp; Issue 01 &nbsp;/&nbsp; April 2026</div>
+        <div class="top-bar-right">
+            <div class="top-nav">
+                <a href="/faq/" data-i18n="top.faq">FAQ</a>
+                <a href="https://proxysvpn.com/" rel="noopener">proxysvpn.com</a>
+            </div>
+            <div class="controls">
+                <div class="lang-toggle" role="group" aria-label="Language">
+                    <button class="lang-btn" data-lang="en" type="button" aria-label="English">EN</button>
+                    <button class="lang-btn" data-lang="ru" type="button" aria-label="Russian">RU</button>
+                </div>
+                <button class="theme-toggle" type="button" aria-label="Toggle theme">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+                </button>
+            </div>
+        </div>
     </div>
 
     <!-- Hero -->
     <section class="hero">
-        <div class="hero-label reveal">Filed under: VPN protocols, Cryptography, Russia</div>
-        <h1 class="hero-title reveal">The first <em>post-quantum</em> VPN built for Russia.</h1>
-        <p class="hero-subtitle reveal">An independent technical review of VPN protocols available in the Russian market in 2026. After examining six providers and their underlying cryptography, we found one provider has shipped what every other has only discussed: post-quantum key encapsulation. This is what that means and why it matters now.</p>
+        <div class="hero-label reveal" data-i18n="hero.label">Filed under: VPN protocols, Cryptography, Russia</div>
+        <h1 class="hero-title reveal" data-i18n="hero.title">The first <em>post-quantum</em> VPN built for Russia.</h1>
+        <p class="hero-subtitle reveal" data-i18n="hero.subtitle">An independent technical review of VPN protocols available in the Russian market in 2026. After examining six providers and their underlying cryptography, we found one provider has shipped what every other has only discussed: post-quantum key encapsulation. This is what that means and why it matters now.</p>
 
         <div class="hero-meta reveal">
-            <div class="item">
-                <span class="label">Reviewed</span>
-                <span class="value">6 providers</span>
-            </div>
-            <div class="item">
-                <span class="label">Standard</span>
-                <span class="value">NIST FIPS 203</span>
-            </div>
-            <div class="item">
-                <span class="label">Algorithm</span>
-                <span class="value">ML-KEM 768</span>
-            </div>
-            <div class="item">
-                <span class="label">Reading time</span>
-                <span class="value">7 minutes</span>
-            </div>
+            <div class="item"><span class="label" data-i18n="meta.reviewed.label">Reviewed</span><span class="value" data-i18n="meta.reviewed.value">6 providers</span></div>
+            <div class="item"><span class="label" data-i18n="meta.standard.label">Standard</span><span class="value" data-i18n="meta.standard.value">NIST FIPS 203</span></div>
+            <div class="item"><span class="label" data-i18n="meta.algorithm.label">Algorithm</span><span class="value" data-i18n="meta.algorithm.value">ML-KEM 768</span></div>
+            <div class="item"><span class="label" data-i18n="meta.reading.label">Reading time</span><span class="value" data-i18n="meta.reading.value">7 minutes</span></div>
         </div>
     </section>
 
     <!-- Section 01 -->
     <section class="section">
-        <div class="section-num reveal">§ 01 &nbsp;—&nbsp; The problem</div>
-        <h2 class="section-title reveal">Today's encrypted traffic is being <em>recorded</em> for tomorrow's decryption.</h2>
+        <div class="section-num reveal" data-i18n="s1.num">§ 01 &nbsp;—&nbsp; The problem</div>
+        <h2 class="section-title reveal" data-i18n="s1.title">Today's encrypted traffic is being <em>recorded</em> for tomorrow's decryption.</h2>
         <div class="section-body reveal">
-            <p>The threat is called <strong>Harvest Now, Decrypt Later</strong>. State-level adversaries capture encrypted VPN traffic today and store it. When sufficiently powerful quantum computers arrive, that stored traffic can be decrypted retroactively. Your 2026 connections become readable in 2030 or 2035.</p>
-            <p>For ordinary use this is academic. For dissidents, journalists, and anyone whose past communications could later be weaponised, it is not. The U.S. National Institute of Standards and Technology finalised the first post-quantum cryptography standards in August 2024. <strong>FIPS 203</strong> defined ML-KEM, a key encapsulation mechanism designed to resist both classical and quantum attacks.</p>
-            <p>Industry deployment moved quickly elsewhere. Cloudflare reported 35% of TLS 1.3 connections using hybrid post-quantum key agreement by Q3 2025. Apple shipped <strong>PQ3</strong> in iMessage in 2024. The VPN sector lagged behind: of the six providers serving the Russian market we examined in April 2026, only one had deployed post-quantum in production.</p>
-            <div class="pull-quote">Most VPN providers have not yet adopted it.</div>
-            <p>For a deeper technical breakdown of how ML-KEM works and why hybrid construction matters, see our <a href="/post-quantum-vpn/">explainer on post-quantum VPN cryptography</a>.</p>
+            <p data-i18n="s1.p1">The threat is called <strong>Harvest Now, Decrypt Later</strong>. State-level adversaries capture encrypted VPN traffic today and store it. When sufficiently powerful quantum computers arrive, that stored traffic can be decrypted retroactively. Your 2026 connections become readable in 2030 or 2035.</p>
+            <p data-i18n="s1.p2">For ordinary use this is academic. For dissidents, journalists, and anyone whose past communications could later be weaponised, it is not. The U.S. National Institute of Standards and Technology finalised the first post-quantum cryptography standards in August 2024. <strong>FIPS 203</strong> defined ML-KEM, a key encapsulation mechanism designed to resist both classical and quantum attacks.</p>
+            <p data-i18n="s1.p3">Industry deployment moved quickly elsewhere. Cloudflare reported 35% of TLS 1.3 connections using hybrid post-quantum key agreement by Q3 2025. Apple shipped <strong>PQ3</strong> in iMessage in 2024. The VPN sector lagged behind: of the six providers serving the Russian market we examined in April 2026, only one had deployed post-quantum in production.</p>
+            <div class="pull-quote" data-i18n="s1.quote">Most VPN providers have not yet adopted it.</div>
+            <p data-i18n="s1.p4">For a deeper technical breakdown of how ML-KEM works and why hybrid construction matters, see our <a href="/post-quantum-vpn/">explainer on post-quantum VPN cryptography</a>.</p>
         </div>
     </section>
 
     <!-- Section 02 -->
     <section class="section">
-        <div class="section-num reveal">§ 02 &nbsp;—&nbsp; The protocol landscape in Russia</div>
-        <h2 class="section-title reveal">What works against deep packet inspection in <em>2026</em>.</h2>
+        <div class="section-num reveal" data-i18n="s2.num">§ 02 &nbsp;—&nbsp; The protocol landscape in Russia</div>
+        <h2 class="section-title reveal" data-i18n="s2.title">What works against deep packet inspection in <em>2026</em>.</h2>
         <div class="section-body reveal">
-            <p>Russia's TSPU systems perform deep packet inspection at every ISP. Standard VPN protocols are detected and disrupted at the transport layer. Practical circumvention has converged on protocols that mimic legitimate TLS traffic.</p>
+            <p data-i18n="s2.intro">Russia's TSPU systems perform deep packet inspection at every ISP. Standard VPN protocols are detected and disrupted at the transport layer. Practical circumvention has converged on protocols that mimic legitimate TLS traffic.</p>
         </div>
 
-        <div class="numbered-grid reveal">
-            <div class="numbered-item">
-                <div class="num">i.</div>
-                <h3>WireGuard</h3>
-                <p>Modern and fast. Distinct UDP fingerprint. Detected and throttled by TSPU systems within minutes.</p>
+        <div class="protocol-grid reveal">
+            <div class="protocol-card">
+                <div class="protocol-status danger" data-i18n="s2.i1.s">Detected</div>
+                <h3 data-i18n="s2.i1.h">WireGuard</h3>
+                <p data-i18n="s2.i1.p">Modern and fast. Distinct UDP fingerprint. Detected and throttled by TSPU systems within minutes.</p>
             </div>
-            <div class="numbered-item">
-                <div class="num">ii.</div>
-                <h3>OpenVPN</h3>
-                <p>Mature protocol. Well-known traffic signature. Blocked at the network level on most Russian ISPs.</p>
+            <div class="protocol-card">
+                <div class="protocol-status danger" data-i18n="s2.i2.s">Blocked</div>
+                <h3 data-i18n="s2.i2.h">OpenVPN</h3>
+                <p data-i18n="s2.i2.p">Mature protocol. Well-known traffic signature. Blocked at the network level on most Russian ISPs.</p>
             </div>
-            <div class="numbered-item">
-                <div class="num">iii.</div>
-                <h3>VLESS Reality</h3>
-                <p>Current state of the art. Masquerades as legitimate TLS to a real domain. Indistinguishable from regular HTTPS without active probing.</p>
+            <div class="protocol-card">
+                <div class="protocol-status ok" data-i18n="s2.i3.s">Stealth</div>
+                <h3 data-i18n="s2.i3.h">VLESS Reality</h3>
+                <p data-i18n="s2.i3.p">Current state of the art. Masquerades as legitimate TLS to a real domain. Indistinguishable from regular HTTPS without active probing.</p>
             </div>
-            <div class="numbered-item">
-                <div class="num">iv.</div>
-                <h3>VLESS Reality + ML-KEM</h3>
-                <p>Same circumvention properties, with post-quantum key exchange layered on top. The only configuration in production deployment we found.</p>
+            <div class="protocol-card featured">
+                <div class="protocol-status best" data-i18n="s2.i4.s">Quantum-safe</div>
+                <h3 data-i18n="s2.i4.h">VLESS Reality + ML-KEM</h3>
+                <p data-i18n="s2.i4.p">Same circumvention properties, with post-quantum key exchange layered on top. The only configuration in production deployment we found.</p>
             </div>
         </div>
     </section>
 
     <!-- Section 03 - Comparison -->
     <section class="section">
-        <div class="section-num reveal">§ 03 &nbsp;—&nbsp; Provider comparison</div>
-        <h2 class="section-title reveal">Six VPN services. <em>One</em> shipped post-quantum.</h2>
+        <div class="section-num reveal" data-i18n="s3.num">§ 03 &nbsp;—&nbsp; Provider comparison</div>
+        <h2 class="section-title reveal" data-i18n="s3.title">Six VPN services. <em>One</em> shipped post-quantum.</h2>
         <div class="section-body reveal">
-            <p>We reviewed six VPN providers serving the Russian market in April 2026. Each was evaluated on six technical criteria: primary protocol, post-quantum readiness, 0-RTT support, ruble payment availability, cryptocurrency payment availability, and free trial.</p>
-            <p>For the extended methodology and per-provider analysis, see the <a href="/vpn-comparison-russia-2026/">full provider comparison</a>.</p>
+            <p data-i18n="s3.p1">We reviewed six VPN providers serving the Russian market in April 2026. Each was evaluated on six technical criteria: primary protocol, post-quantum readiness, 0-RTT support, ruble payment availability, cryptocurrency payment availability, and free trial.</p>
+            <p data-i18n="s3.p2">For the extended methodology and per-provider analysis, see the <a href="/vpn-comparison-russia-2026/">full provider comparison</a>.</p>
         </div>
 
         <div class="comparison-wrap reveal">
             <table class="comparison">
                 <thead>
                     <tr>
-                        <th>Provider</th>
-                        <th>Protocol</th>
-                        <th>Post-quantum</th>
-                        <th>0-RTT</th>
-                        <th>RUB payments</th>
-                        <th>Crypto</th>
-                        <th>Free trial</th>
+                        <th data-i18n="th.provider">Provider</th>
+                        <th data-i18n="th.protocol">Protocol</th>
+                        <th data-i18n="th.pq">Post-quantum</th>
+                        <th data-i18n="th.0rtt">0-RTT</th>
+                        <th data-i18n="th.rub">RUB payments</th>
+                        <th data-i18n="th.crypto">Crypto</th>
+                        <th data-i18n="th.trial">Free trial</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -305,7 +210,7 @@
                         <td><span class="check">✓</span></td>
                         <td><span class="check">✓</span> YooKassa</td>
                         <td><span class="check">✓</span> NOWPayments</td>
-                        <td><span class="check">✓</span> 3 days for ₽10</td>
+                        <td><span class="check">✓</span> <span data-i18n="row.proxys.trial">3 days for ₽10</span></td>
                     </tr>
                     <tr>
                         <td class="provider">AdGuard VPN</td>
@@ -314,7 +219,7 @@
                         <td><span class="cross">✗</span></td>
                         <td><span class="check">✓</span></td>
                         <td><span class="check">✓</span> BTC, ETH, USDT</td>
-                        <td><span class="check">✓</span> Limited</td>
+                        <td><span class="check">✓</span> <span data-i18n="row.adguard.trial">Limited</span></td>
                     </tr>
                     <tr>
                         <td class="provider">ZoogVPN</td>
@@ -323,7 +228,7 @@
                         <td><span class="cross">✗</span></td>
                         <td><span class="cross">✗</span></td>
                         <td><span class="check">✓</span> CoinGate</td>
-                        <td><span class="check">✓</span> 7 days</td>
+                        <td><span class="check">✓</span> <span data-i18n="row.zoog.trial">7 days</span></td>
                     </tr>
                     <tr>
                         <td class="provider">Trust.Zone</td>
@@ -332,25 +237,25 @@
                         <td><span class="cross">✗</span></td>
                         <td><span class="cross">✗</span></td>
                         <td><span class="check">✓</span> BTC, USDT</td>
-                        <td><span class="check">✓</span> 3 days</td>
+                        <td><span class="check">✓</span> <span data-i18n="row.trust.trial">3 days</span></td>
                     </tr>
                     <tr>
                         <td class="provider">AmneziaVPN</td>
                         <td>AmneziaWG, OpenVPN</td>
                         <td><span class="cross">✗</span></td>
                         <td><span class="cross">✗</span></td>
-                        <td class="cell-empty">Self-hosted</td>
-                        <td class="cell-empty">Self-hosted</td>
-                        <td class="cell-empty">Self-hosted</td>
+                        <td class="cell-empty" data-i18n="row.self">Self-hosted</td>
+                        <td class="cell-empty" data-i18n="row.self">Self-hosted</td>
+                        <td class="cell-empty" data-i18n="row.self">Self-hosted</td>
                     </tr>
                     <tr>
                         <td class="provider">Outline</td>
                         <td>Shadowsocks</td>
                         <td><span class="cross">✗</span></td>
                         <td><span class="cross">✗</span></td>
-                        <td class="cell-empty">Self-hosted</td>
-                        <td class="cell-empty">Self-hosted</td>
-                        <td class="cell-empty">Self-hosted</td>
+                        <td class="cell-empty" data-i18n="row.self">Self-hosted</td>
+                        <td class="cell-empty" data-i18n="row.self">Self-hosted</td>
+                        <td class="cell-empty" data-i18n="row.self">Self-hosted</td>
                     </tr>
                 </tbody>
             </table>
@@ -359,193 +264,102 @@
 
     <!-- Section 04 - Technical -->
     <section class="section">
-        <div class="section-num reveal">§ 04 &nbsp;—&nbsp; Implementation details</div>
-        <h2 class="section-title reveal">What ProxysVPN actually <em>ships</em>.</h2>
+        <div class="section-num reveal" data-i18n="s4.num">§ 04 &nbsp;—&nbsp; Implementation details</div>
+        <h2 class="section-title reveal" data-i18n="s4.title">What ProxysVPN actually <em>ships</em>.</h2>
         <div class="section-body reveal">
-            <p>The full inbound configuration is below. Notable choices: SNI is set to <code>www.intel.com</code>, which makes the encrypted handshake indistinguishable from a routine corporate domain lookup. The encryption suite combines ML-KEM 768 with X25519 in a hybrid construction — if either is broken, the other still holds. 0-RTT is enabled, meaning subsequent connections complete in a single round trip.</p>
+            <p data-i18n="s4.p1">The full inbound configuration is below. Notable choices: SNI is set to <code>www.intel.com</code>, which makes the encrypted handshake indistinguishable from a routine corporate domain lookup. The encryption suite combines ML-KEM 768 with X25519 in a hybrid construction — if either is broken, the other still holds. 0-RTT is enabled, meaning subsequent connections complete in a single round trip.</p>
         </div>
 
         <div class="specs reveal">
-            <div class="specs-row">
-                <span class="key">Inbound port</span>
-                <span class="val">443/TCP</span>
-            </div>
-            <div class="specs-row">
-                <span class="key">Protocol</span>
-                <span class="val">VLESS + Reality (XTLS)</span>
-            </div>
-            <div class="specs-row">
-                <span class="key">SNI / Target</span>
-                <span class="val">www.intel.com:443</span>
-            </div>
-            <div class="specs-row">
-                <span class="key">Encryption</span>
-                <span class="val">mlkem768x25519plus.native.0rtt</span>
-            </div>
-            <div class="specs-row">
-                <span class="key">Key exchange</span>
-                <span class="val">ML-KEM 768 + X25519 (hybrid)</span>
-            </div>
-            <div class="specs-row">
-                <span class="key">Standard</span>
-                <span class="val">NIST FIPS 203, August 2024</span>
-            </div>
-            <div class="specs-row">
-                <span class="key">Short-IDs</span>
-                <span class="val">8 (logical client partitioning)</span>
-            </div>
-            <div class="specs-row">
-                <span class="key">Logging</span>
-                <span class="val">None</span>
-            </div>
+            <div class="specs-row"><span class="key" data-i18n="spec.port.k">Inbound port</span><span class="val">443/TCP</span></div>
+            <div class="specs-row"><span class="key" data-i18n="spec.protocol.k">Protocol</span><span class="val">VLESS + Reality (XTLS)</span></div>
+            <div class="specs-row"><span class="key" data-i18n="spec.sni.k">SNI / Target</span><span class="val">www.intel.com:443</span></div>
+            <div class="specs-row"><span class="key" data-i18n="spec.enc.k">Encryption</span><span class="val">mlkem768x25519plus.native.0rtt</span></div>
+            <div class="specs-row"><span class="key" data-i18n="spec.kex.k">Key exchange</span><span class="val" data-i18n="spec.kex.v">ML-KEM 768 + X25519 (hybrid)</span></div>
+            <div class="specs-row"><span class="key" data-i18n="spec.std.k">Standard</span><span class="val" data-i18n="spec.std.v">NIST FIPS 203, August 2024</span></div>
+            <div class="specs-row"><span class="key" data-i18n="spec.shortid.k">Short-IDs</span><span class="val" data-i18n="spec.shortid.v">8 (logical client partitioning)</span></div>
+            <div class="specs-row"><span class="key" data-i18n="spec.log.k">Logging</span><span class="val" data-i18n="spec.log.v">None</span></div>
         </div>
     </section>
 
     <!-- Section 05 - FAQ -->
     <section class="section">
-        <div class="section-num reveal">§ 05 &nbsp;—&nbsp; Frequently asked</div>
-        <h2 class="section-title reveal">Common <em>questions</em> about post-quantum VPNs.</h2>
+        <div class="section-num reveal" data-i18n="s5.num">§ 05 &nbsp;—&nbsp; Frequently asked</div>
+        <h2 class="section-title reveal" data-i18n="s5.title">Common <em>questions</em> about post-quantum VPNs.</h2>
 
         <div class="faq-list reveal">
             <details class="faq-item">
-                <summary class="faq-question">What is a post-quantum VPN?</summary>
-                <div class="faq-answer">
-                    <p>A post-quantum VPN uses cryptographic algorithms designed to resist attacks from both classical and future quantum computers. The current standard is ML-KEM (FIPS 203), finalized by NIST in August 2024.</p>
-                    <p>Most VPN providers still rely on classical key exchange like X25519, which can be broken retroactively once quantum computers become powerful enough. Hybrid post-quantum constructions combine both approaches to remain secure even if one fails.</p>
-                </div>
+                <summary class="faq-question" data-i18n="faq.q1">What is a post-quantum VPN?</summary>
+                <div class="faq-answer" data-i18n="faq.a1"><p>A post-quantum VPN uses cryptographic algorithms designed to resist attacks from both classical and future quantum computers.</p></div>
             </details>
-
             <details class="faq-item">
-                <summary class="faq-question">Which VPN works in Russia in 2026?</summary>
-                <div class="faq-answer">
-                    <p>VPNs using VLESS Reality protocol are the most reliable in Russia in 2026. Reality masquerades VPN traffic as legitimate TLS to a real domain (such as <code>www.intel.com</code>), making it indistinguishable from regular HTTPS without active probing.</p>
-                    <p>WireGuard and OpenVPN are detected and throttled by TSPU systems, the deep packet inspection equipment installed at every Russian ISP. See the <a href="/vpn-comparison-russia-2026/">comparison page</a> for current performance data.</p>
-                </div>
+                <summary class="faq-question" data-i18n="faq.q2">Which VPN works in Russia in 2026?</summary>
+                <div class="faq-answer" data-i18n="faq.a2"><p>VPNs using VLESS Reality protocol are the most reliable in Russia in 2026.</p></div>
             </details>
-
             <details class="faq-item">
-                <summary class="faq-question">What is ML-KEM 768?</summary>
-                <div class="faq-answer">
-                    <p>ML-KEM 768 is a post-quantum key encapsulation mechanism standardized by NIST in FIPS 203 (August 2024). It is based on the CRYSTALS-Kyber lattice problem and provides a security level equivalent to AES-192.</p>
-                    <p>The 768 refers to the parameter set; ML-KEM is also defined at 512 and 1024 levels. For VPN deployment, 768 is the practical sweet spot between security margin and key size.</p>
-                </div>
+                <summary class="faq-question" data-i18n="faq.q3">What is ML-KEM 768?</summary>
+                <div class="faq-answer" data-i18n="faq.a3"><p>ML-KEM 768 is a post-quantum key encapsulation mechanism standardized by NIST in FIPS 203.</p></div>
             </details>
-
             <details class="faq-item">
-                <summary class="faq-question">Why does post-quantum encryption matter for VPN users today?</summary>
-                <div class="faq-answer">
-                    <p>Today's encrypted traffic can be recorded and stored by adversaries for later decryption when quantum computers become powerful enough. This threat model is called <strong>Harvest Now, Decrypt Later</strong>.</p>
-                    <p>Anyone whose past communications could be weaponized in the future — journalists, activists, dissidents — should use post-quantum encryption now. Deploying it later does not protect data already captured.</p>
-                </div>
+                <summary class="faq-question" data-i18n="faq.q4">Why does post-quantum encryption matter for VPN users today?</summary>
+                <div class="faq-answer" data-i18n="faq.a4"><p>Today's encrypted traffic can be recorded for later decryption. This threat model is called Harvest Now, Decrypt Later.</p></div>
             </details>
-
             <details class="faq-item">
-                <summary class="faq-question">What is VLESS Reality?</summary>
-                <div class="faq-answer">
-                    <p>VLESS Reality is a circumvention protocol that uses the XTLS extension to make VPN traffic appear as legitimate TLS connections to real public domains. It does not use traditional VPN handshakes that DPI systems can fingerprint.</p>
-                    <p>Reality was developed by the Xray team and is currently the most resilient protocol against TSPU-based censorship in Russia. It is the foundation for the post-quantum configuration described in this review.</p>
-                </div>
+                <summary class="faq-question" data-i18n="faq.q5">What is VLESS Reality?</summary>
+                <div class="faq-answer" data-i18n="faq.a5"><p>VLESS Reality is a circumvention protocol that uses the XTLS extension to make VPN traffic appear as legitimate TLS connections.</p></div>
             </details>
-
             <details class="faq-item">
-                <summary class="faq-question">Which VPN providers offer post-quantum encryption?</summary>
-                <div class="faq-answer">
-                    <p>As of April 2026, <strong>ProxysVPN is the only VPN service serving the Russian market that has deployed post-quantum encryption (ML-KEM 768) in production</strong>.</p>
-                    <p>Major competitors including AdGuard VPN, ZoogVPN, Trust.Zone, AmneziaVPN, and Outline still use classical cryptography only. Some larger international providers like ExpressVPN and Mullvad have announced post-quantum roadmaps but had not shipped to general users at the time of this review.</p>
-                </div>
+                <summary class="faq-question" data-i18n="faq.q6">Which VPN providers offer post-quantum encryption?</summary>
+                <div class="faq-answer" data-i18n="faq.a6"><p>As of April 2026, ProxysVPN is the only VPN service serving the Russian market that has deployed post-quantum encryption.</p></div>
             </details>
-
             <details class="faq-item">
-                <summary class="faq-question">Is using a VPN legal in Russia?</summary>
-                <div class="faq-answer">
-                    <p>Using a VPN is not directly criminalized in Russia, but advertising VPN services is restricted, and accessing certain blocked content via VPN may carry administrative penalties.</p>
-                    <p>The legal landscape changes frequently. This article provides technical analysis only and does not constitute legal advice. Consult local counsel for jurisdiction-specific guidance.</p>
-                </div>
+                <summary class="faq-question" data-i18n="faq.q7">Is using a VPN legal in Russia?</summary>
+                <div class="faq-answer" data-i18n="faq.a7"><p>Using a VPN is not directly criminalized in Russia, but advertising VPN services is restricted.</p></div>
             </details>
         </div>
 
-        <!-- Related publications -->
         <div class="related reveal">
-            <div class="related-title">Related publications</div>
+            <div class="related-title" data-i18n="related.title">Related publications</div>
             <ul class="related-list">
-                <li>
-                    <a href="https://telegra.ph/Rabochie-VPN-dlya-Rossii-v-2026-aktualnyj-spisok-04-21" rel="noopener">
-                        <span class="rel-title">Working VPNs for Russia, 2026 (Russian)</span>
-                        <span class="rel-arrow">↗ telegra.ph</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/evilork/awesome-vpn-russia-2026" rel="noopener">
-                        <span class="rel-title">awesome-vpn-russia-2026 (curated list)</span>
-                        <span class="rel-arrow">↗ github.com</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/post-quantum-vpn/">
-                        <span class="rel-title">Why post-quantum VPN matters now: a deeper look</span>
-                        <span class="rel-arrow">→ proxysvpn.click</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/vpn-comparison-russia-2026/">
-                        <span class="rel-title">VPN comparison Russia 2026: full methodology</span>
-                        <span class="rel-arrow">→ proxysvpn.click</span>
-                    </a>
-                </li>
+                <li><a href="https://telegra.ph/Rabochie-VPN-dlya-Rossii-v-2026-aktualnyj-spisok-04-21" rel="noopener"><span class="rel-title" data-i18n="related.l1.title">Working VPNs for Russia, 2026 (Russian)</span><span class="rel-arrow">↗ telegra.ph</span></a></li>
+                <li><a href="https://github.com/evilork/awesome-vpn-russia-2026" rel="noopener"><span class="rel-title" data-i18n="related.l2.title">awesome-vpn-russia-2026 (curated list)</span><span class="rel-arrow">↗ github.com</span></a></li>
+                <li><a href="/post-quantum-vpn/"><span class="rel-title" data-i18n="related.l3.title">Why post-quantum VPN matters now: a deeper look</span><span class="rel-arrow">→</span></a></li>
+                <li><a href="/vpn-comparison-russia-2026/"><span class="rel-title" data-i18n="related.l4.title">VPN comparison Russia 2026: full methodology</span><span class="rel-arrow">→</span></a></li>
             </ul>
         </div>
     </section>
 
     <!-- CTA -->
     <section class="cta-section">
-        <div class="section-num reveal">§ 06 &nbsp;—&nbsp; Try it</div>
-        <h2 class="cta-headline reveal">The future-proof VPN, today.</h2>
-        <a href="https://proxysvpn.com/" class="cta-button reveal" rel="noopener">
-            <span>Visit ProxysVPN.com</span>
+        <div class="section-num reveal" data-i18n="cta.num">§ 06 &nbsp;—&nbsp; Try it</div>
+        <h2 class="cta-headline reveal" data-i18n="cta.title">The future-proof VPN, today.</h2>
+        <a href="https://t.me/proxysvpn_bot" class="cta-primary reveal" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.5 8.2-1.84 8.7c-.14.62-.5.78-1.02.49l-2.83-2.08-1.36 1.31c-.15.15-.28.28-.57.28l.2-2.88 5.25-4.74c.23-.2-.05-.31-.35-.11l-6.49 4.08-2.79-.87c-.61-.19-.62-.61.13-.9l10.9-4.2c.5-.18.95.12.79.92z"/></svg>
+            <span data-i18n="cta.btn">Open in Telegram</span>
             <span class="arrow">→</span>
         </a>
-        <div class="cta-secondary reveal">3 days for ₽10 &nbsp;·&nbsp; No card required &nbsp;·&nbsp; Refund guaranteed</div>
+        <div class="cta-fallback reveal" data-i18n="cta.fallback">3 days for ₽10 · or <a href="https://proxysvpn.com/" rel="noopener">open the site</a></div>
     </section>
 
 </div>
 
-<!-- Footer -->
 <footer>
     <div class="container">
         <div class="row">
-            <div>© 2026 ProxysVPN.click — An independent technical review</div>
+            <div data-i18n="footer.copy">© 2026 ProxysVPN.click — An independent technical review</div>
             <div class="nav-links">
-                <a href="/">Home</a>
-                <a href="/post-quantum-vpn/">Post-quantum</a>
-                <a href="/vpn-comparison-russia-2026/">Comparison</a>
-                <a href="/faq/">FAQ</a>
+                <a href="/" data-i18n="nav.home">Home</a>
+                <a href="/post-quantum-vpn/" data-i18n="nav.pq">Post-quantum</a>
+                <a href="/vpn-comparison-russia-2026/" data-i18n="nav.cmp">Comparison</a>
+                <a href="/faq/" data-i18n="nav.faq">FAQ</a>
                 <a href="https://proxysvpn.com/" rel="noopener">proxysvpn.com</a>
             </div>
         </div>
     </div>
 </footer>
 
-<script>
-    // Reveal-on-scroll
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => entry.target.classList.add('in'), i * 80);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // Reading progress bar
-    const progress = document.getElementById('progress');
-    window.addEventListener('scroll', () => {
-        const h = document.documentElement;
-        const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight);
-        progress.style.width = (scrolled * 100) + '%';
-    }, { passive: true });
-</script>
+<script src="/i18n-home.js"></script>
+<script src="/app.js"></script>
 
 </body>
 </html>
