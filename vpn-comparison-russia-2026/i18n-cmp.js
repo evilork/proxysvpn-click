@@ -13,6 +13,7 @@ window.I18N = {
         "hero.label": "Filed under — VPN providers, Russian market, Comparison",
         "hero.title": "Six providers, six <em>criteria</em>, one finding.",
         "hero.subtitle": "The Russian VPN market is full of marketing claims and short on independent comparisons. We selected six providers operating in April 2026 and evaluated each against six criteria that matter for users in this jurisdiction. Methodology and per-provider notes below.",
+        "hero.disclosure": "<strong>Disclosure.</strong> This site is run by the team behind ProxysVPN, one of the reviewed providers. We compare on parameters you can check yourself, but we are an interested party.",
 
         "meta.providers.label": "Providers",
         "meta.providers.value": "6",
@@ -84,7 +85,7 @@ window.I18N = {
         "cta.btn": "Open in Telegram",
         "cta.fallback": '3 days for ₽10 · or <a href="https://proxysvpn.com/" rel="noopener">open the site</a>',
 
-        "footer.copy": "© 2026 ProxysVPN.click — An independent technical review",
+        "footer.copy": "© 2026 ProxysVPN.click — A technical review by the ProxysVPN team",
         "nav.home": "Home",
         "nav.pq": "Post-quantum",
         "nav.cmp": "Comparison",
@@ -103,6 +104,7 @@ window.I18N = {
         "hero.label": "Рубрики — VPN-провайдеры, российский рынок, сравнение",
         "hero.title": "Шесть провайдеров, шесть <em>критериев</em>, один вывод.",
         "hero.subtitle": "Российский VPN-рынок переполнен маркетинговыми заявлениями и беден на независимые сравнения. Мы выбрали шесть провайдеров, работающих в апреле 2026, и оценили каждого по шести критериям, важным для пользователей в этой юрисдикции. Методология и per-provider заметки ниже.",
+        "hero.disclosure": "<strong>Раскрытие.</strong> Сайт ведёт команда ProxysVPN — одного из сервисов в обзоре. Мы сравниваем по параметрам, которые можно проверить самому, но мы заинтересованная сторона.",
 
         "meta.providers.label": "Провайдеров",
         "meta.providers.value": "6",
@@ -174,7 +176,7 @@ window.I18N = {
         "cta.btn": "Открыть в Telegram",
         "cta.fallback": '3 дня за ₽10 · или <a href="https://proxysvpn.com/" rel="noopener">перейти на сайт</a>',
 
-        "footer.copy": "© 2026 ProxysVPN.click — независимый технический обзор",
+        "footer.copy": "© 2026 ProxysVPN.click — технический обзор от команды ProxysVPN",
         "nav.home": "Главная",
         "nav.pq": "Пост-квантум",
         "nav.cmp": "Сравнение",

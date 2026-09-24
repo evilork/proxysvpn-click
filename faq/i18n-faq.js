@@ -13,6 +13,7 @@ window.I18N = {
         "hero.label": "Filed under — Reference, Frequently asked",
         "hero.title": "<em>Questions</em> we get often.",
         "hero.subtitle": "Fourteen questions about post-quantum VPN encryption, VLESS Reality, ML-KEM 768, and using a VPN in Russia in 2026 — answered concisely with links to deeper material.",
+        "hero.disclosure": "<strong>Disclosure.</strong> This site is run by the team behind ProxysVPN, one of the reviewed providers. We compare on parameters you can check yourself, but we are an interested party.",
 
         "q1": "What is a post-quantum VPN?",
         "a1": '<p>A post-quantum VPN uses cryptographic algorithms designed to resist attacks from both classical and future quantum computers. The current standard is ML-KEM (FIPS 203), finalized by NIST in August 2024.</p><p>Most VPN providers still rely on classical key exchange like X25519, which can be broken retroactively once quantum computers become powerful enough. <a href="/post-quantum-vpn/">Read the deeper explainer</a>.</p>',
@@ -66,7 +67,7 @@ window.I18N = {
         "cta.btn": "Open in Telegram",
         "cta.fallback": '3 days for ₽10 · or <a href="https://proxysvpn.com/" rel="noopener">open the site</a>',
 
-        "footer.copy": "© 2026 ProxysVPN.click — An independent technical review",
+        "footer.copy": "© 2026 ProxysVPN.click — A technical review by the ProxysVPN team",
         "nav.home": "Home",
         "nav.pq": "Post-quantum",
         "nav.cmp": "Comparison",
@@ -85,6 +86,7 @@ window.I18N = {
         "hero.label": "Рубрики — Справочник, частые вопросы",
         "hero.title": "<em>Вопросы</em>, которые задают часто.",
         "hero.subtitle": "Четырнадцать вопросов о пост-квантовом VPN-шифровании, VLESS Reality, ML-KEM 768 и использовании VPN в России в 2026 году — короткие ответы со ссылками на подробные материалы.",
+        "hero.disclosure": "<strong>Раскрытие.</strong> Сайт ведёт команда ProxysVPN — одного из сервисов в обзоре. Мы сравниваем по параметрам, которые можно проверить самому, но мы заинтересованная сторона.",
 
         "q1": "Что такое пост-квантовый VPN?",
         "a1": '<p>Пост-квантовый VPN использует криптографические алгоритмы, устойчивые к атакам как классических, так и будущих квантовых компьютеров. Текущий стандарт — ML-KEM (FIPS 203), утверждённый NIST в августе 2024 года.</p><p>Большинство VPN-провайдеров до сих пор полагаются на классический обмен ключами вроде X25519, который можно взломать ретроактивно. <a href="/post-quantum-vpn/?lang=ru">Подробный разбор</a>.</p>',
@@ -138,7 +140,7 @@ window.I18N = {
         "cta.btn": "Открыть в Telegram",
         "cta.fallback": '3 дня за ₽10 · или <a href="https://proxysvpn.com/" rel="noopener">перейти на сайт</a>',
 
-        "footer.copy": "© 2026 ProxysVPN.click — независимый технический обзор",
+        "footer.copy": "© 2026 ProxysVPN.click — технический обзор от команды ProxysVPN",
         "nav.home": "Главная",
         "nav.pq": "Пост-квантум",
         "nav.cmp": "Сравнение",

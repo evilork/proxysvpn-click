@@ -13,6 +13,7 @@ window.I18N = {
         "hero.label": "Filed under — Cryptography, Quantum computing",
         "hero.title": "How <em>post-quantum</em> changes the VPN threat model.",
         "hero.subtitle": "A technical explainer for engineers and security-conscious users. Why ML-KEM 768 was chosen, how hybrid construction works, and what it means for traffic captured today and decrypted tomorrow.",
+        "hero.disclosure": "<strong>Disclosure.</strong> This site is run by the team behind ProxysVPN, one of the reviewed providers. We compare on parameters you can check yourself, but we are an interested party.",
 
         "meta.standard.label": "Standard",
         "meta.standard.value": "FIPS 203",
@@ -96,7 +97,7 @@ window.I18N = {
         "cta.btn": "Open in Telegram",
         "cta.fallback": '3 days for ₽10 · or <a href="https://proxysvpn.com/" rel="noopener">open the site</a>',
 
-        "footer.copy": "© 2026 ProxysVPN.click — An independent technical review",
+        "footer.copy": "© 2026 ProxysVPN.click — A technical review by the ProxysVPN team",
         "nav.home": "Home",
         "nav.pq": "Post-quantum",
         "nav.cmp": "Comparison",
@@ -115,6 +116,7 @@ window.I18N = {
         "hero.label": "Рубрики — Криптография, квантовые вычисления",
         "hero.title": "Как <em>пост-квантум</em> меняет модель угроз VPN.",
         "hero.subtitle": "Технический разбор для инженеров и security-сознательных пользователей. Почему выбран ML-KEM 768, как работает гибридная конструкция и что это значит для трафика, перехваченного сегодня и расшифрованного завтра.",
+        "hero.disclosure": "<strong>Раскрытие.</strong> Сайт ведёт команда ProxysVPN — одного из сервисов в обзоре. Мы сравниваем по параметрам, которые можно проверить самому, но мы заинтересованная сторона.",
 
         "meta.standard.label": "Стандарт",
         "meta.standard.value": "FIPS 203",
@@ -198,7 +200,7 @@ window.I18N = {
         "cta.btn": "Открыть в Telegram",
         "cta.fallback": '3 дня за ₽10 · или <a href="https://proxysvpn.com/" rel="noopener">перейти на сайт</a>',
 
-        "footer.copy": "© 2026 ProxysVPN.click — независимый технический обзор",
+        "footer.copy": "© 2026 ProxysVPN.click — технический обзор от команды ProxysVPN",
         "nav.home": "Главная",
         "nav.pq": "Пост-квантум",
         "nav.cmp": "Сравнение",

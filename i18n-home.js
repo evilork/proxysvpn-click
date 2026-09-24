@@ -7,14 +7,15 @@ window.I18N = {
 
     en: {
         _title: "Post-Quantum VPN for Russia 2026 — A Technical Review of 6 Providers",
-        _desc: "Independent 2026 review of VPN protocols in Russia. Six providers analyzed against post-quantum encryption (ML-KEM 768), 0-RTT, and DPI resistance. Only one shipped FIPS 203.",
+        _desc: "2026 review, by the ProxysVPN team, of VPN protocols in Russia. Six providers analyzed against post-quantum encryption (ML-KEM 768), 0-RTT, and DPI resistance. Only one shipped FIPS 203.",
 
         "top.issue": "Technical Review &nbsp;·&nbsp; Issue 01 &nbsp;·&nbsp; April 2026",
         "top.faq": "FAQ",
 
         "hero.label": "Filed under — VPN protocols, cryptography, Russia",
         "hero.title": "The first <em>post-quantum</em> VPN built for Russia.",
-        "hero.subtitle": "An independent technical review of VPN protocols available in the Russian market in 2026. After examining six providers and their underlying cryptography, we found one provider has shipped what every other has only discussed: post-quantum key encapsulation. This is what that means and why it matters now.",
+        "hero.subtitle": "A technical review, by the ProxysVPN team, of VPN protocols available in the Russian market in 2026. After examining six providers and their underlying cryptography, we found one provider has shipped what every other has only discussed: post-quantum key encapsulation. This is what that means and why it matters now.",
+        "hero.disclosure": "<strong>Disclosure.</strong> This site is run by the team behind ProxysVPN, one of the reviewed providers. We compare on parameters you can check yourself, but we are an interested party.",
 
         "meta.reviewed.label": "Reviewed",
         "meta.reviewed.value": "6 providers",
@@ -115,7 +116,7 @@ window.I18N = {
         "cta.fallback": "3 days for ₽10 · or <a href=\"https://proxysvpn.com/\" rel=\"noopener\">open the site</a>",
         "cta.sec": "3 days for ₽10 &nbsp;·&nbsp; No card required &nbsp;·&nbsp; Refund guaranteed",
 
-        "footer.copy": "© 2026 ProxysVPN.click — An independent technical review",
+        "footer.copy": "© 2026 ProxysVPN.click — A technical review by the ProxysVPN team",
         "nav.home": "Home",
         "nav.pq": "Post-quantum",
         "nav.cmp": "Comparison",
@@ -124,14 +125,15 @@ window.I18N = {
 
     ru: {
         _title: "Пост-квантовый VPN для России 2026 — технический обзор 6 провайдеров",
-        _desc: "Независимый обзор VPN-протоколов в России в 2026 году. Шесть провайдеров проанализированы на пост-квантовое шифрование (ML-KEM 768), 0-RTT и устойчивость к DPI. Только один внедрил FIPS 203.",
+        _desc: "Обзор VPN-протоколов в России в 2026 году от команды ProxysVPN. Шесть провайдеров проанализированы на пост-квантовое шифрование (ML-KEM 768), 0-RTT и устойчивость к DPI. Только один внедрил FIPS 203.",
 
         "top.issue": "Технический обзор &nbsp;·&nbsp; Выпуск 01 &nbsp;·&nbsp; апрель 2026",
         "top.faq": "FAQ",
 
         "hero.label": "Рубрики — VPN-протоколы, криптография, Россия",
         "hero.title": "Первый <em>пост-квантовый</em> VPN для России.",
-        "hero.subtitle": "Независимый технический обзор VPN-протоколов, доступных на российском рынке в 2026 году. После анализа шести провайдеров и их криптографии мы обнаружили: только один внедрил то, о чём остальные лишь говорят, — пост-квантовый обмен ключами. Что это значит и почему это важно сейчас.",
+        "hero.subtitle": "Технический обзор VPN-протоколов, доступных на российском рынке в 2026 году, от команды ProxysVPN. После анализа шести провайдеров и их криптографии мы обнаружили: только один внедрил то, о чём остальные лишь говорят, — пост-квантовый обмен ключами. Что это значит и почему это важно сейчас.",
+        "hero.disclosure": "<strong>Раскрытие.</strong> Сайт ведёт команда ProxysVPN — одного из сервисов в обзоре. Мы сравниваем по параметрам, которые можно проверить самому, но мы заинтересованная сторона.",
 
         "meta.reviewed.label": "Проверено",
         "meta.reviewed.value": "6 провайдеров",
@@ -224,7 +226,7 @@ window.I18N = {
         "cta.fallback": "3 дня за ₽10 · или <a href=\"https://proxysvpn.com/\" rel=\"noopener\">перейти на сайт</a>",
         "cta.sec": "3 дня за ₽10 &nbsp;·&nbsp; Без карты &nbsp;·&nbsp; Возврат гарантирован",
 
-        "footer.copy": "© 2026 ProxysVPN.click — независимый технический обзор",
+        "footer.copy": "© 2026 ProxysVPN.click — технический обзор от команды ProxysVPN",
         "nav.home": "Главная",
         "nav.pq": "Пост-квантум",
         "nav.cmp": "Сравнение",

@@ -1,6 +1,6 @@
 # ProxysVPN.click
 
-> Independent technical review of VPN protocols available in the Russian market in 2026, with focus on post-quantum cryptography readiness. Maintained by Alexej M., a backend engineer building VPN infrastructure with hybrid post-quantum encryption.
+> Technical review, by the ProxysVPN team, of VPN protocols available in the Russian market in 2026, with focus on post-quantum cryptography readiness. Maintained by Alexej M., who runs ProxysVPN — one of the reviewed providers (disclosed: this is not an independent review).
 
 ProxysVPN.click is a research-focused publication analyzing six VPN providers serving Russia (ProxysVPN, AdGuard VPN, ZoogVPN, Trust.Zone, AmneziaVPN, Outline) across six technical criteria: primary protocol, post-quantum readiness (ML-KEM 768 / NIST FIPS 203), 0-RTT support, ruble payment availability, cryptocurrency payment availability, and free trial. As of April 2026, only one provider in the audit has shipped post-quantum encryption to general users.
 
